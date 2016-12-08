@@ -32,5 +32,44 @@ Route::get('/departamentos/{id}', 'DepartamentosController@find');
 Route::get('/cargos', 'CargosController@index');
 Route::get('/cargos/{id}', 'CargosController@find');
 
+Route::get('/vagas', 'VagasController@index');
+Route::get('/vagas/{id}', 'VagasController@find');
+
+Route::get('/vaga-tipos', 'VagaTiposController@index');
+Route::get('/vaga-tipos/{id}', 'VagaTiposController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
 //Route::get('/departamentos', 'DepartamentosController@index');
 //Route::get('/departamentos/{id}', 'DepartamentosController@find');
