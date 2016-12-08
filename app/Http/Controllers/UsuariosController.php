@@ -12,6 +12,9 @@ class UsuariosController extends Controller
         $empresa = ['Elo', 'Stelo', 'Alelo'];
         $departamento = ['Financeiro', 'Marketing', 'TI', 'Engenharia'];
         $cargo = ['Analista', 'Programador', 'Estagiário', 'Engenheiro', 'Tester'];
+        $empresaRandom = array_rand($empresa);
+        $cargoRandom = array_rand($cargo);
+        $departamentoRandom = array_rand($departamento);
 
         return [
             'id'=>$id,
@@ -38,19 +41,20 @@ class UsuariosController extends Controller
                 'dataAtualizacao'=>$currentTimestamp,
             ],
             'cargo'=>[
-                'id'=>$faker->numberBetween(1,111),
-                'nome'=>$cargo[array_rand($cargo)],
+                'id'=>array_keys($cargo)[$cargoRandom]+1,
+                'nome'=>$cargo[$cargoRandom],
             ],
             'empresa'=>[
-                'id'=>$faker->numberBetween(1,111),
-                'nome'=>$empresa[array_rand($empresa)],
+                'id'=>array_keys($empresa)[$empresaRandom]+1,
+                'nome'=>$empresa[$empresaRandom],
             ],
             'departamento'=>[
-                'id'=>$faker->numberBetween(1,111),
-                'nome'=>$departamento[array_rand($departamento)],
+                'id'=>array_keys($departamento)[$departamentoRandom]+1,
+                'nome'=>$departamento[$departamentoRandom],
             ],
             'asset'=>[
                 'id'=>$faker->numberBetween(1,111),
+                'arquivo'=>$faker->imageUrl(),
             ],
             'dataCriacao'=>$currentTimestamp,
             'dataAtualizacao'=>$currentTimestamp,

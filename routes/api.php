@@ -26,3 +26,11 @@ Route::get('/clippings/{id}', 'ClippingsController@find');
 Route::get('/eventos', 'EventosController@index');
 Route::get('/eventos/{id}', 'EventosController@find');
 
+Route::get('/departamentos', 'DepartamentosController@index');
+Route::get('/departamentos/{id}', 'DepartamentosController@find');
+
+Route::get('/cargos', 'CargosController@index');
+Route::get('/cargos/{id}', 'CargosController@find');
+
+//Route::get('/departamentos', 'DepartamentosController@index');
+//Route::get('/departamentos/{id}', 'DepartamentosController@find');
