@@ -8,9 +8,11 @@ class UsuariosController extends Controller
     {
         $faker = \Faker\Factory::create('pt_BR');
         $id = intval($id) ? intval($id) : $faker->numberBetween(1,111);
+        $currentTimestamp = strtotime(date('m-d-Y'));
         $empresa = ['Elo', 'Stelo', 'Alelo'];
         $departamento = ['Financeiro', 'Marketing', 'TI', 'Engenharia'];
         $cargo = ['Analista', 'Programador', 'Estagiário', 'Engenheiro', 'Tester'];
+
         return [
             'id'=>$id,
             'nome'=>$faker->name,
@@ -18,7 +20,7 @@ class UsuariosController extends Controller
             'userName'=>$faker->userName,
             'cpf'=>$faker->numerify('###########'),
             'dataContratacao'=>$faker->date('Y-m-d'),
-            'dataUltimaNotificacao'=>$faker->unixTime,
+            'dataUltimaNotificacao'=>$currentTimestamp,
             'temAvatar'=>$faker->numberBetween(0,1),
             'bloqueado'=>$faker->numberBetween(0,1),
             'oculto'=>$faker->numberBetween(0,1),
@@ -32,8 +34,8 @@ class UsuariosController extends Controller
                 'celularPessoal'=>$faker->numerify('(##) 9 #####-####'),
                 'emailPessoal'=>$faker->email,
                 'arquivoCurriculo'=>$faker->sentence,
-                'dataCriacao'=>$faker->unixTime,
-                'dataAtualizacao'=>$faker->unixTime,
+                'dataCriacao'=>$currentTimestamp,
+                'dataAtualizacao'=>$currentTimestamp,
             ],
             'cargo'=>[
                 'id'=>$faker->numberBetween(1,111),
@@ -50,9 +52,9 @@ class UsuariosController extends Controller
             'asset'=>[
                 'id'=>$faker->numberBetween(1,111),
             ],
-            'dataCriacao'=>$faker->unixTime,
-            'dataAtualizacao'=>$faker->unixTime,
-            'dataExclusao'=>$faker->unixTime,
+            'dataCriacao'=>$currentTimestamp,
+            'dataAtualizacao'=>$currentTimestamp,
+            'dataExclusao'=>null,
         ];
     }
 

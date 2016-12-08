@@ -8,6 +8,7 @@ class ClippingsController extends Controller
     {
         $faker = \Faker\Factory::create('pt_BR');
         $id = intval($id) ? intval($id) : $faker->numberBetween(1,111);
+
         return [
             'id'=>$id,
             'usuario'=>[
@@ -17,9 +18,7 @@ class ClippingsController extends Controller
             'titulo'=>$faker->title,
             'conteudo'=>$faker->sentence,
             'dataPublicacao'=>$faker->date('Y-m-d'),
-            'arquivo'=>[
-                'id'=>$faker->numberBetween(1,111)
-            ],
+            'arquivo'=>$faker->imageUrl(),
             'dataCriacao'=>$faker->unixTime,
             'dataAtualizacao'=>$faker->unixTime,
         ];

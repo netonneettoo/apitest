@@ -8,19 +8,93 @@ class EventosController extends Controller
     {
         $faker = \Faker\Factory::create('pt_BR');
         $id = intval($id) ? intval($id) : $faker->numberBetween(1,111);
-        $departamento = ['Financeiro', 'Marketing', 'TI', 'Engenharia'];
+        $currentTimestamp = strtotime(date('m-d-Y'));
+
         return [
             'id'=>$id,
-            'departamento'=>[
-                'id'=>$faker->numberBetween(1,111),
-                'nome'=>$departamento[array_rand($departamento)],
-            ],
             'usuario'=>[
                 'id'=>$faker->numberBetween(1,111),
                 'nome'=>$faker->name,
             ],
-            'dataEvento'=>$faker->date('d/m/Y'),
-            'tituloEvento'=>$faker->title,
+            'nome'=>$faker->name,
+            'endereco'=>$faker->streetAddress,
+            'imagemDestaque'=>[
+                'id'=>$faker->numberBetween(1,111),
+                'arquivo'=>$faker->imageUrl(),
+            ],
+            'descricaoDestaque'=>$faker->sentence,
+            'galeria'=>$faker->imageUrl(),
+            'programacao'=>[
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'titulo'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ],
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'titulo'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ],
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'titulo'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ],
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'titulo'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ]
+            ],
+            'palestrante'=>[
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'nome'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ],
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'nome'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ],
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'nome'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ],
+                [
+                    'id'=>$faker->numberBetween(1,111),
+                    'nome'=>$faker->name,
+                    'descricao'=>$faker->sentence,
+                    'ordem'=>$faker->numberBetween(1,111),
+                    'dataCriacao'=>$currentTimestamp,
+                    'dataAtualizacao'=>$currentTimestamp,
+                ]
+            ],
+            'dataCriacao'=>$currentTimestamp,
+            'dataAtualizacao'=>$currentTimestamp,
+            'dataExclusao'=>null,
         ];
     }
 
